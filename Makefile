@@ -32,7 +32,8 @@ BCFILES = pipex_bonus.c \
 		ft_strncmp_bonus.c \
 		get_next_line_bonus.c \
 		get_next_line_utils_bonus.c \
-		ft_putstr_bonus.c
+		ft_putstr_bonus.c \
+		check_and_replace_bonus.c
 
 OBJC = $(CFILES:.c=.o)
 BOBJC = $(BCFILES:_bonus.c=_bonus.o)

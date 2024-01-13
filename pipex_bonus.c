@@ -6,7 +6,7 @@
 /*   By: mel-jira <mel-jira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 16:44:12 by mel-jira          #+#    #+#             */
-/*   Updated: 2024/01/13 17:47:30 by mel-jira         ###   ########.fr       */
+/*   Updated: 2024/01/13 20:03:50 by mel-jira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int	here_doc_read(t_list *info)
 			free(line);
 			break ;
 		}
+		line = check_and_replace(info, line);
 		write(fd[1], line, ft_strlen(line));
 		free(line);
 	}
@@ -99,12 +100,17 @@ void	create_struct(t_list **info, char **strs1, char **strs2, int value)
 	(*info)->envp = strs2;
 	(*info)->argc = value;
 }
+void	f()
+{
+	system("leaks pipex_bonus");
+}
 
 int	main(int argc, char **argv, char **envp)
 {
 	int		fd[2];
 	t_list	*info;
 
+	atexit(f);
 	create_struct(&info, argv, envp, argc);
 	if (!info)
 		return (1);

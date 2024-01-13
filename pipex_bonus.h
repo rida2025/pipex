@@ -6,7 +6,7 @@
 /*   By: mel-jira <mel-jira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 14:52:26 by mel-jira          #+#    #+#             */
-/*   Updated: 2024/01/13 17:46:50 by mel-jira         ###   ########.fr       */
+/*   Updated: 2024/01/13 19:46:29 by mel-jira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,6 @@ void	check_heredoc(t_list *info);
 void	short_here_doc_line(t_list **info, char **argv);
 void	short_normal_line(t_list **info, char **argv);
 void	short_fun_midle(t_list **info, int *pipefd);
+char	*check_and_replace(t_list *info, char *str);
 
 #endif
